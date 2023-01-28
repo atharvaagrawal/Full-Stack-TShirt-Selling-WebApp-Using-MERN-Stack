@@ -42,7 +42,7 @@ var userSchema = new mongoose.Schema(
 userSchema
   .virtual("password")
   .set(function (password) {
-    this._password = password;
+    this._password = password; // _ used to indicate its a private a variable
 
     this.salt = uuidv1();
 
