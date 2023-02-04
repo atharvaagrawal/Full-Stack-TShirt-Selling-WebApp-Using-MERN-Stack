@@ -14,12 +14,14 @@ const Signup = () => {
 
   const { name, email, password, error, success } = values;
 
+  // higher order function
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
+    // spread operator
     setValues({ ...values, error: false });
     signup({ name, email, password })
       .then((data) => {
