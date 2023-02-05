@@ -7,6 +7,13 @@ import AdminRoute from "./auth/helper/AdminRoutes";
 import PrivateRoute from "./auth/helper/PrivateRoutes";
 import UserDashboard from "./user/UserDashBoard";
 import AdminDashboard from "./user/AdminDashBoard";
+import AddCategory from "./admin/AddCategory";
+import AddProduct from "./admin/AddProduct";
+import ManageProduct from "./admin/ManageProducts";
+import Orders from "./admin/Orders";
+import ManageCategories from "./admin/ManageCategories";
+import UpdateProduct from "./admin/UpdateProduct";
+import UpdateCategory from "./admin/UpdateCategories";
 
 const AllRoutes = () => {
   return (
@@ -28,6 +35,65 @@ const AllRoutes = () => {
           element={
             <AdminRoute>
               <AdminDashboard />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin/create/category"
+          element={
+            <AdminRoute>
+              <AddCategory />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/categories"
+          element={
+            <AdminRoute>
+              <ManageCategories />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/create/product"
+          element={
+            <AdminRoute>
+              <AddProduct />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/products"
+          element={
+            <AdminRoute>
+              <ManageProduct />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/orders"
+          element={
+            <AdminRoute>
+              <Orders />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin/product/update/:productId"
+          element={
+            <AdminRoute>
+              <UpdateProduct />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin/category/update/:categoryId"
+          element={
+            <AdminRoute>
+              <UpdateCategory />
             </AdminRoute>
           }
         />

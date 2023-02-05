@@ -119,7 +119,7 @@ exports.deleteProduct = (req, res) => {
   });
 };
 
-exports.updateProduct = () => {
+exports.updateProduct = (req, res) => {
   let form = new formidable.IncomingForm();
 
   form.keepExtensions = true;
