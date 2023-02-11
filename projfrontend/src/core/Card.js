@@ -18,6 +18,7 @@ const Card = ({
   const cardTitle = product ? product.name : "Coding Atharva";
   const cardDescrption = product ? product.description : "Coding Atharva";
   const cardPrice = product ? product.price : "100";
+  const cardCategory = product ? product.category.name : "T-Shirt";
 
   const navigate = useNavigate();
   const addToCart = () => {
@@ -60,8 +61,21 @@ const Card = ({
   };
 
   return (
-    <div className="card text-white bg-dark border border-info ">
+    <div className="card text-white bg-dark border border-info">
       <div className="card-header lead">{cardTitle}</div>
+
+      <a href="#!">
+        <div className="mask">
+          <div className="d-flex justify-content-start align-items-end h-100">
+            <h5>
+              <span className="badge bg-success ms-2">{cardCategory}</span>
+            </h5>
+          </div>
+        </div>
+        <div className="hover-overlay">
+          <div className="mask"></div>
+        </div>
+      </a>
       <div className="card-body">
         <ImageHelper product={product} />
 

@@ -49,13 +49,12 @@ const AdminDashboard = () => {
         <h4 className="card-header"> Admin Information</h4>
         <ul className="list-group">
           <li className="list-group-item">
-            <span className="badge bg-success mr-2"> Name:</span> Atharva
+            <span className="badge bg-success mr-2"> Name:</span> {name}
           </li>
         </ul>
         <ul className="list-group">
           <li className="list-group-item">
-            <span className="badge bg-success mr-2"> Email:</span>{" "}
-            atharva@gmail.com
+            <span className="badge bg-success mr-2"> Email:</span> {email}
           </li>
         </ul>
         <ul className="list-group">

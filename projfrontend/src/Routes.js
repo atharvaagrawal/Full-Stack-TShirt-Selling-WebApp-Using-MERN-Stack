@@ -15,6 +15,7 @@ import ManageCategories from "./admin/ManageCategories";
 import UpdateProduct from "./admin/UpdateProduct";
 import UpdateCategory from "./admin/UpdateCategories";
 import Cart from "./core/Cart";
+import Category from "./core/Category";
 
 const AllRoutes = () => {
   return (
@@ -24,6 +25,7 @@ const AllRoutes = () => {
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/signin" element={<Signin />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/category" element={<Category />}></Route>
 
         <Route
           path="/user/dashboard"

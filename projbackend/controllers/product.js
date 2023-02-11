@@ -1,7 +1,9 @@
 const Product = require("../models/product");
+const Category = require("../models/category");
 const formidable = require("formidable");
 const _ = require("lodash");
 const fs = require("fs"); // file system
+const product = require("../models/product");
 
 exports.getProductById = (req, res, next, id) => {
   Product.findById(id)
@@ -53,6 +55,31 @@ exports.getAllProducts = (req, res) => {
       return res.json(products);
     });
 };
+
+// get Product By Category
+exports.getProductByCategory = async (req, res) => {
+  const products = await getProductByCategory(req.params.categoryName);
+  res.json(products);
+};
+
+async function getProductByCategory(categoryName) {
+  return await Product.aggregate([
+    {
+      $lookup: {
+        from: "categories",
+        localField: "category",
+        foreignField: "_id",
+        as: "category",
+      },
+    },
+    {
+      $unwind: "$category",
+    },
+    {
+      $match: { "category.name": categoryName },
+    },
+  ]);
+}
 
 exports.createProduct = (req, res) => {
   let form = new formidable.IncomingForm();

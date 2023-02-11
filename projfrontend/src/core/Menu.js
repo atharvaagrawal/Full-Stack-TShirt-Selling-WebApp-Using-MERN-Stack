@@ -28,6 +28,15 @@ const Menu = () => {
           <NavLink
             style={({ isActive }) => (isActive ? activeStyle : notActive)}
             className="nav-link"
+            to="/category"
+          >
+            Category
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : notActive)}
+            className="nav-link"
             to="/cart"
           >
             Cart

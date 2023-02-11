@@ -28,13 +28,16 @@ const StripeCheckout = ({
   };
 
   const makePayment = (token) => {
+    console.log("HERE");
     const body = {
       token,
       products,
     };
+
     const headers = {
       "Content-Type": "application/json",
     };
+
     return fetch(`${API}/stripepayment`, {
       method: "POST",
       headers,
@@ -43,14 +46,15 @@ const StripeCheckout = ({
       .then((response) => {
         console.log(response);
         // we call call further method for ex: createOrder
+
         const { status } = response;
-        const orderData = {
-          products: products,
-          transaction_id: response.transaction.id, // check ones
-          amount: response.transaction.amount,
-        };
-        createOrder(userId, token, orderData);
-        console.log("STATUS:", status);
+        // const orderData = {
+        //   products: products,
+        //   transaction_id: response.transaction.id, // check ones
+        //   amount: response.transaction.amount,
+        // };
+        // createOrder(userId, token, orderData);
+        // console.log("STATUS:", status);
         cartEmpty(() => {
           console.log("Did we got a crash?");
         });
@@ -61,11 +65,9 @@ const StripeCheckout = ({
   };
 
   const showStripeButton = () => {
-    const SECRET = process.env.REACT_APP_STRIPE_PUBLISHABLE;
-    console.log(SECRET);
     return isAuthenticated() ? (
       <StripeCheckoutButton
-        stripeKey={SECRET}
+        stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE}
         token={makePayment}
         amount={getFinalPrice() * 100}
         name="Buy Tshirts"
@@ -82,10 +84,10 @@ const StripeCheckout = ({
   };
 
   return (
-    <dib>
+    <div>
       <h3> Stripe Checkout {getFinalPrice()} </h3>
       {showStripeButton()}
-    </dib>
+    </div>
   );
 };
 

@@ -18,7 +18,7 @@ const Cart = () => {
   const loadAllProducts = () => {
     return (
       <div>
-        <h2> This section to load all products </h2>
+        <h2> Product List </h2>
         {products.map((product, index) => {
           return (
             <Card

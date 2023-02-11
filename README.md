@@ -1,6 +1,6 @@
-# MERN BootCamp by LCO
+# TShirt Selling Website
 
-In this created a E-Commerce Website for selling T-Shirts
+This project is a full-stack web application for selling T-shirts. It utilizes the MERN stack (MongoDB, Express, React, and Node.js) to provide a seamless user experience. The website has a simple and user-friendly interface, allowing customers to easily browse and purchase T-shirts. The payment integration uses Stripe, a leading payment processing platform, to ensure secure and efficient transactions. This project aims to provide an online platform for T-shirt businesses to showcase and sell their products to a wider audience.
 
 ## Versions
 
@@ -16,3 +16,9 @@ In this created a E-Commerce Website for selling T-Shirts
 | ------------ | -------------------------------------- |
 | projbackend  | Backend Code in Node.js and Express.js |
 | projfrontend | Frontend Code in React                 |
+
+***
+## Project Working Youtube Video
+[![](http://img.youtube.com/vi/L1JpU9tF6Iw/0.jpg)](https://youtu.be/L1JpU9tF6Iw "E-Commerce Website for T-Shirt Selling using MERN Stack ")
+
+
