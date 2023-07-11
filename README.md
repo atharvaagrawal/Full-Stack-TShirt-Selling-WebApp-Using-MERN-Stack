@@ -1,4 +1,4 @@
-# TShirt Selling Website
+# TShirt Selling WebApp
 
 This project is a full-stack web application for selling T-shirts. It utilizes the MERN stack (MongoDB, Express, React, and Node.js) to provide a seamless user experience. The website has a simple and user-friendly interface, allowing customers to easily browse and purchase T-shirts. The payment integration uses Stripe, a leading payment processing platform, to ensure secure and efficient transactions. This project aims to provide an online platform for T-shirt businesses to showcase and sell their products to a wider audience.
 
